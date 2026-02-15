@@ -59,3 +59,22 @@ temp/
 .Trashes
 ehthumbs.db
 Desktop.ini
+
+# Security - sensitive files
+secrets/
+.secrets/
+credentials.json
+service-account.json
+*.p12
+
+# Debug files
+*.pyc
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+
+# Archive files (usually shouldn't be in git)
+*.zip
+*.tar.gz
+*.rar
+*.7z

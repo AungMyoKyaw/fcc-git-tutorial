@@ -47,9 +47,75 @@ cd fcc-git-tutorial
 
 ```
 fcc-git-tutorial/
-├── README.md       # Project documentation
-├── .gitignore      # Git ignore patterns
-└── readme.md       # Original tutorial file
+├── readme.md       # Project documentation
+└── .gitignore      # Git ignore patterns
+```
+
+## Common Git Workflows
+
+### Feature Branch Workflow
+
+```bash
+# Create and switch to a new feature branch
+git checkout -b feature/my-new-feature
+
+# Make changes and stage them
+git add .
+
+# Commit with a descriptive message
+git commit -m "feat: add new feature"
+
+# Push to remote
+git push -u origin feature/my-new-feature
+```
+
+### Syncing with Remote
+
+```bash
+# Fetch latest changes without merging
+git fetch origin
+
+# Pull and merge latest changes from main branch
+git pull origin master
+
+# Rebase your branch on top of latest master
+git rebase origin/master
+```
+
+## Best Practices
+
+- **Commit often**: Small, focused commits are easier to review and revert
+- **Write clear messages**: Use conventional commit format (feat, fix, docs, style, refactor, test, chore)
+- **Pull before push**: Always sync with remote before pushing
+- **Use branches**: Keep master/main stable, develop features in branches
+- **Review changes**: Use `git diff` before committing to review your changes
+
+## Troubleshooting
+
+### Undo last commit (keep changes)
+
+```bash
+git reset --soft HEAD~1
+```
+
+### Discard all local changes
+
+```bash
+git checkout -- .
+```
+
+### Fix commit message (before push)
+
+```bash
+git commit --amend -m "New commit message"
+```
+
+### Resolve merge conflicts
+
+```bash
+# After resolving conflicts in your editor
+git add .
+git commit -m "resolve merge conflicts"
 ```
 
 ## Contributing
